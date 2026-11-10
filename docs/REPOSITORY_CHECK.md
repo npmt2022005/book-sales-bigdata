@@ -4,7 +4,7 @@ Ngày: 11/11/2026.
 
 ## Đã thực hiện
 
-- Khởi tạo branch `main`, gắn remote `https://github.com/npmt2022005/book-sales-bigdata.git` trên tài khoản npmt2022005. Repository riêng tư.
+- Khởi tạo branch `main`, gắn remote `https://github.com/npmt2022005/book-sales-bigdata.git` trên tài khoản npmt2022005. Repository công khai.
 - README mô tả mục tiêu, thành viên, dữ liệu, cách cài/chạy, hai đợt đo, kết quả, EDA/RFM, tests và giới hạn.
 - Có requirements runtime/report và hướng dẫn dữ liệu ngoài Git.
 - Đưa hai notebook Colab vào notebooks; giữ bản cuối của PDF/Word trong reports/submission.
@@ -27,4 +27,4 @@ Kết quả: **12 test project đạt, 1 test model skip đúng lý do; 6 test d
 
 ## Truy cập bài nộp
 
-URL: https://github.com/npmt2022005/book-sales-bigdata . Với repository riêng tư, giảng viên cần được cấp quyền hoặc nhóm phải chuyển quyền truy cập theo yêu cầu môn. Bản local không bao gồm dữ liệu lớn bị Git bỏ qua; phần dữ liệu tổng hợp và báo cáo đủ để xem sản phẩm.
+URL: https://github.com/npmt2022005/book-sales-bigdata . Repository đã công khai theo yêu cầu của nhóm; người xem mở được trực tiếp bằng liên kết. Bản local không bao gồm dữ liệu lớn bị Git bỏ qua; phần dữ liệu tổng hợp và báo cáo đủ để xem sản phẩm.

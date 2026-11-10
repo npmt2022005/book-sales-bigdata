@@ -307,7 +307,7 @@ Nguồn dữ liệu và phần mềm giữ điều kiện sử dụng của bên
 
 ## Repository và cập nhật bài nộp
 
-Repository chính: **https://github.com/npmt2022005/book-sales-bigdata**, branch `main`. Repository được tạo riêng tư; giảng viên cần được cấp quyền xem hoặc nhóm chủ động đổi quyền truy cập phù hợp yêu cầu nộp bài.
+Repository chính: **https://github.com/npmt2022005/book-sales-bigdata**, branch `main`. Repository công khai; giảng viên có thể mở trực tiếp bằng liên kết.
 
 Clone mã nguồn:
 
