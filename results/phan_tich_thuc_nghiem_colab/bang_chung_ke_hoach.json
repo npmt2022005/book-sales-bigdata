@@ -1,0 +1,110 @@
+[
+  {
+    "engine": "postgres",
+    "query": "Q1",
+    "explain_execution_ms": 14438.817,
+    "disk_sort": false,
+    "index_scan": false,
+    "root_temp_read_blocks": 0,
+    "root_temp_written_blocks": 0
+  },
+  {
+    "engine": "postgres",
+    "query": "Q2",
+    "explain_execution_ms": 52756.536,
+    "disk_sort": true,
+    "index_scan": false,
+    "root_temp_read_blocks": 216663,
+    "root_temp_written_blocks": 264437
+  },
+  {
+    "engine": "postgres",
+    "query": "Q3",
+    "explain_execution_ms": 2622.592,
+    "disk_sort": false,
+    "index_scan": false,
+    "root_temp_read_blocks": 0,
+    "root_temp_written_blocks": 0
+  },
+  {
+    "engine": "postgres",
+    "query": "Q4",
+    "explain_execution_ms": 46352.747,
+    "disk_sort": true,
+    "index_scan": false,
+    "root_temp_read_blocks": 194086,
+    "root_temp_written_blocks": 194411
+  },
+  {
+    "engine": "postgres",
+    "query": "Q5",
+    "explain_execution_ms": 9978.345,
+    "disk_sort": false,
+    "index_scan": false,
+    "root_temp_read_blocks": 0,
+    "root_temp_written_blocks": 0
+  },
+  {
+    "engine": "postgres",
+    "query": "Q6",
+    "explain_execution_ms": 73150.267,
+    "disk_sort": true,
+    "index_scan": false,
+    "root_temp_read_blocks": 360440,
+    "root_temp_written_blocks": 443173
+  },
+  {
+    "engine": "postgres_index",
+    "query": "Q1",
+    "explain_execution_ms": 14312.428,
+    "disk_sort": false,
+    "index_scan": false,
+    "root_temp_read_blocks": 0,
+    "root_temp_written_blocks": 0
+  },
+  {
+    "engine": "postgres_index",
+    "query": "Q2",
+    "explain_execution_ms": 50540.235,
+    "disk_sort": true,
+    "index_scan": false,
+    "root_temp_read_blocks": 216737,
+    "root_temp_written_blocks": 264566
+  },
+  {
+    "engine": "postgres_index",
+    "query": "Q3",
+    "explain_execution_ms": 904.768,
+    "disk_sort": false,
+    "index_scan": true,
+    "root_temp_read_blocks": 0,
+    "root_temp_written_blocks": 0
+  },
+  {
+    "engine": "postgres_index",
+    "query": "Q4",
+    "explain_execution_ms": 43861.726,
+    "disk_sort": true,
+    "index_scan": false,
+    "root_temp_read_blocks": 194086,
+    "root_temp_written_blocks": 194411
+  },
+  {
+    "engine": "postgres_index",
+    "query": "Q5",
+    "explain_execution_ms": 9099.065,
+    "disk_sort": false,
+    "index_scan": false,
+    "root_temp_read_blocks": 0,
+    "root_temp_written_blocks": 0
+  },
+  {
+    "engine": "postgres_index",
+    "query": "Q6",
+    "explain_execution_ms": 59438.463,
+    "disk_sort": true,
+    "index_scan": false,
+    "root_temp_read_blocks": 360440,
+    "root_temp_written_blocks": 443173
+  }
+]

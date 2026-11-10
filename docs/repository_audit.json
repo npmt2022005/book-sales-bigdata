@@ -1,0 +1,28 @@
+{
+  "files": 161,
+  "bytes": 6680246,
+  "checks": [
+    {
+      "command": [
+        "run_tests.py",
+        "--unit-only"
+      ],
+      "returncode": 0,
+      "log_tail": "ALL CHECKS PASSED\n\n...\n----------------------------------------------------------------------\nRan 3 tests in 1.601s\n\nOK\ntest_cluster_exclusion (test_data_rules.DataRuleTests.test_cluster_exclusion) ... ok\ntest_duplicate_and_null_primary_key (test_data_rules.DataRuleTests.test_duplicate_and_null_primary_key) ... ok\ntest_missing_revenue_is_not_zero (test_data_rules.DataRuleTests.test_missing_revenue_is_not_zero) ... ok\ntest_model_roundtrip_matches_saved_training_labels (test_data_rules.DataRuleTests.test_model_roundtrip_matches_saved_training_labels) ... skipped 'Full RFM/model artifacts are intentionally excluded from Git; generate them with src/09_rfm_kmeans.py.'\ntest_orphan_including_null_fk (test_data_rules.DataRuleTests.test_orphan_including_null_fk) ... ok\ntest_ratings_invalid_and_missing (test_data_rules.DataRuleTests.test_ratings_invalid_and_missing) ... ok\ntest_simulation_flag_requires_true (test_data_rules.DataRuleTests.test_simulation_flag_requires_true) ... ok\ntest_each_speedup_uses_new_baseline (test_extended_results.ExtendedResultTests.test_each_speedup_uses_new_baseline) ... ok\ntest_refresh_costs_and_evidence (test_extended_results.ExtendedResultTests.test_refresh_costs_and_evidence) ... ok\ntest_run_manifest (test_extended_results.ExtendedResultTests.test_run_manifest) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.329s\n\nOK (skipped=1)\n"
+    },
+    {
+      "command": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "dashboard/tests",
+        "-v"
+      ],
+      "returncode": 0,
+      "log_tail": "\ntest_cluster_selection (test_app.DashboardTests.test_cluster_selection) ... 2026-11-11 01:29:49.814 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\nok\ntest_eda_filters_include_apostrophes_and_empty_period (test_app.DashboardTests.test_eda_filters_include_apostrophes_and_empty_period) ... 2026-11-11 01:29:51.093 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\nok\ntest_extended_experiment_uses_new_baseline_and_costs (test_app.DashboardTests.test_extended_experiment_uses_new_baseline_and_costs) ... 2026-11-11 01:29:52.407 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\nok\ntest_overview (test_app.DashboardTests.test_overview) ... 2026-11-11 01:29:53.335 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\nok\ntest_performance_filters_and_speedup (test_app.DashboardTests.test_performance_filters_and_speedup) ... 2026-11-11 01:29:53.824 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\nok\ntest_preaggregated_data_and_benchmark_contract (test_app.DashboardTests.test_preaggregated_data_and_benchmark_contract) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 4.759s\n\nOK\n"
+    }
+  ],
+  "readme_links_resolve": true,
+  "all_python_syntax_valid": true
+}

@@ -1,0 +1,33 @@
+{
+  "funnel": {
+    "reviews_total": 29475453,
+    "verified": 20566389,
+    "verified_and_valid": 20566389,
+    "after_dedupe": 20342188,
+    "after_join_with_books": 20342188
+  },
+  "row_counts": {
+    "dim_books": 4448181,
+    "dim_customers": 8353809,
+    "dim_date": 9711,
+    "fact_sales": 20342188
+  },
+  "fact_with_price_pct": 80.43,
+  "estimated_revenue_usd": 319039058.28,
+  "date_range": [
+    "1997-02-12",
+    "2023-09-14"
+  ],
+  "checks_must_be_zero": {
+    "fact_rows_lost_when_adding_customer": 0,
+    "duplicate_book_key": 0,
+    "duplicate_parent_asin": 0,
+    "duplicate_customer_key": 0,
+    "duplicate_date_key": 0,
+    "duplicate_sale_id": 0,
+    "orphan_book": 0,
+    "orphan_customer": 0,
+    "orphan_date": 0,
+    "customer_total_mismatch": 0
+  }
+}

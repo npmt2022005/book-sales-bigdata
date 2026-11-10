@@ -1,0 +1,18 @@
+{
+  "dim_books.parquet": {
+    "bytes": 181245027,
+    "sha256": "b8b727c90f81bd4a7910240296db77e91dc55e62eb6aa47ba599b2cf0cbe5630"
+  },
+  "dim_customers.parquet": {
+    "bytes": 177914875,
+    "sha256": "77d1d7bfaf40b88818fd6f2f7ab171d2d23948680e5de43bf3f623aef6a4d9e9"
+  },
+  "dim_date.parquet": {
+    "bytes": 54211,
+    "sha256": "679e5781f9ad36e72adc69cbd0a515392be0418a7c677bc349282b405972d480"
+  },
+  "fact_sales.parquet": {
+    "bytes": 277353401,
+    "sha256": "ab329540348dca647d893b66fcb114e93ae7c1963ecb8d08ffacba48cb27ffe4"
+  }
+}

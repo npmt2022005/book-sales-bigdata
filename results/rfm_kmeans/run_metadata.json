@@ -1,0 +1,13 @@
+{
+  "reference_date": "2023-09-15",
+  "training_users": 150000,
+  "eligible_users": 5821888,
+  "excluded_users": 2531921,
+  "selected_k": 2,
+  "selected_seed": 42,
+  "silhouette_eval_users": 3000,
+  "sampling_seed": 20261109,
+  "selection_rule": "maximize mean silhouette over 3 seeds; choose seed with highest silhouette",
+  "mean_ari": 0.9982852437283035,
+  "training_sample_sha256": "c52c0a0116737053f4acfe438bf46ce962f66eaddd151e4d8ba32db657e09b13"
+}

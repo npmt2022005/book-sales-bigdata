@@ -1,0 +1,6 @@
+{
+  "tests": 6,
+  "passed": 6,
+  "visual_browser_inspection": false,
+  "scope": "all 4 pages; both experiment sessions; new baseline and MV costs"
+}

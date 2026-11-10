@@ -1,0 +1,230 @@
+{
+  "warehouse": "D:\\book-sales-bigdata\\data\\warehouse",
+  "rfm": "D:\\book-sales-bigdata\\results\\rfm_kmeans",
+  "checks": [
+    {
+      "name": "dim_books.book_key.unique_nonnull",
+      "status": "pass",
+      "violations": 0,
+      "seconds": 0.635
+    },
+    {
+      "name": "dim_books.parent_asin.unique_nonnull",
+      "status": "pass",
+      "violations": 0,
+      "seconds": 0.785
+    },
+    {
+      "name": "dim_customers.customer_key.unique_nonnull",
+      "status": "pass",
+      "violations": 0,
+      "seconds": 1.228
+    },
+    {
+      "name": "dim_customers.user_id.unique_nonnull",
+      "status": "pass",
+      "violations": 0,
+      "seconds": 2.028
+    },
+    {
+      "name": "dim_date.date_key.unique_nonnull",
+      "status": "pass",
+      "violations": 0,
+      "seconds": 0.009
+    },
+    {
+      "name": "fact_sales.sale_id.unique_nonnull",
+      "status": "pass",
+      "violations": 0,
+      "seconds": 3.621
+    },
+    {
+      "name": "fact_sales.fk_book_key",
+      "status": "pass",
+      "violations": 0,
+      "seconds": 1.505
+    },
+    {
+      "name": "fact_sales.fk_customer_key",
+      "status": "pass",
+      "violations": 0,
+      "seconds": 1.861
+    },
+    {
+      "name": "fact_sales.fk_date_key",
+      "status": "pass",
+      "violations": 0,
+      "seconds": 0.198
+    },
+    {
+      "name": "fact_sales.required_keys",
+      "status": "pass",
+      "violations": 0,
+      "seconds": 0.013
+    },
+    {
+      "name": "fact_sales.rating_range",
+      "status": "pass",
+      "violations": 0,
+      "seconds": 0.051
+    },
+    {
+      "name": "fact_sales.quantity_assumption",
+      "status": "pass",
+      "violations": 0,
+      "seconds": 0.009
+    },
+    {
+      "name": "fact_sales.helpful_vote",
+      "status": "pass",
+      "violations": 0,
+      "seconds": 0.009
+    },
+    {
+      "name": "dim_books.price_range",
+      "status": "pass",
+      "violations": 0,
+      "seconds": 0.023
+    },
+    {
+      "name": "fact_sales.revenue_formula",
+      "status": "pass",
+      "violations": 0,
+      "seconds": 0.65
+    },
+    {
+      "name": "fact_sales.price_matches_metadata",
+      "status": "pass",
+      "violations": 0,
+      "seconds": 2.163
+    },
+    {
+      "name": "dim_date.calendar",
+      "status": "pass",
+      "violations": 0,
+      "seconds": 0.015
+    },
+    {
+      "name": "dim_date.contiguous",
+      "status": "pass",
+      "violations": 0,
+      "seconds": 0.007
+    },
+    {
+      "name": "dim_customers.per_user_aggregation",
+      "status": "pass",
+      "violations": 0,
+      "seconds": 4.249
+    },
+    {
+      "name": "fact_inventory.unique_book_month",
+      "status": "pass",
+      "violations": 0,
+      "seconds": 0.803
+    },
+    {
+      "name": "fact_inventory.fk_book",
+      "status": "pass",
+      "violations": 0,
+      "seconds": 0.522
+    },
+    {
+      "name": "fact_inventory.simulation_flag",
+      "status": "pass",
+      "violations": 0,
+      "seconds": 0.018
+    },
+    {
+      "name": "fact_inventory.valid_values",
+      "status": "pass",
+      "violations": 0,
+      "seconds": 0.121
+    },
+    {
+      "name": "fact_inventory.sold_by_book_month",
+      "status": "pass",
+      "violations": 0,
+      "seconds": 0.724
+    },
+    {
+      "name": "fact_inventory.cost_bounds",
+      "status": "pass",
+      "violations": 0,
+      "seconds": 0.74
+    },
+    {
+      "name": "rfm.unique_user",
+      "status": "pass",
+      "violations": 0,
+      "seconds": 1.229
+    },
+    {
+      "name": "rfm.population_membership",
+      "status": "pass",
+      "violations": 0,
+      "seconds": 1.12
+    },
+    {
+      "name": "rfm.frequency_per_user",
+      "status": "pass",
+      "violations": 0,
+      "seconds": 1.188
+    },
+    {
+      "name": "rfm.recency_per_user",
+      "status": "pass",
+      "violations": 0,
+      "seconds": 1.273
+    },
+    {
+      "name": "rfm.coverage_and_eligibility",
+      "status": "pass",
+      "violations": 0,
+      "seconds": 0.293
+    },
+    {
+      "name": "rfm.monetary_per_user",
+      "status": "pass",
+      "violations": 0,
+      "seconds": 4.347
+    },
+    {
+      "name": "assignments.one_per_user",
+      "status": "pass",
+      "violations": 0,
+      "seconds": 1.476
+    },
+    {
+      "name": "assignments.population",
+      "status": "pass",
+      "violations": 0,
+      "seconds": 1.197
+    },
+    {
+      "name": "assignments.preserve_rfm",
+      "status": "pass",
+      "violations": 0,
+      "seconds": 2.155
+    },
+    {
+      "name": "assignments.exclusion",
+      "status": "pass",
+      "violations": 0,
+      "seconds": 0.189
+    },
+    {
+      "name": "assignments.cluster_bounds",
+      "status": "pass",
+      "violations": 0,
+      "seconds": 0.091
+    },
+    {
+      "name": "assignments.cluster_count",
+      "status": "pass",
+      "violations": 0,
+      "seconds": 0.119
+    }
+  ],
+  "passed": 37,
+  "total": 37
+}

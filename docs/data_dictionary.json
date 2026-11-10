@@ -1,0 +1,341 @@
+{
+  "dim_books": {
+    "path": "data\\warehouse\\dim_books.parquet",
+    "rows": 4448181,
+    "logical_key": "book_key (PK), parent_asin (duy nhất)",
+    "columns": [
+      {
+        "name": "book_key",
+        "type": "BIGINT",
+        "description": "Khóa thay thế của sản phẩm; sinh khi xây warehouse, không ổn định nếu xây lại bằng quy tắc khác."
+      },
+      {
+        "name": "parent_asin",
+        "type": "VARCHAR",
+        "description": "Mã sản phẩm cha Amazon; khóa nghiệp vụ để nối metadata và đánh giá, không nhất thiết là một tác phẩm duy nhất."
+      },
+      {
+        "name": "title",
+        "type": "VARCHAR",
+        "description": "Tên sản phẩm sách từ metadata; chuỗi trống chuyển NULL."
+      },
+      {
+        "name": "author",
+        "type": "VARCHAR",
+        "description": "Tác giả từ metadata, có thể NULL."
+      },
+      {
+        "name": "category",
+        "type": "VARCHAR",
+        "description": "Nhãn danh mục nguồn; thiếu chuyển Unknown. Có thể gồm chiến dịch hoặc bộ sưu tập, chưa phải hệ thể loại chuẩn."
+      },
+      {
+        "name": "publisher",
+        "type": "VARCHAR",
+        "description": "Nhà xuất bản trích từ publisher_raw, loại phần sau dấu ; hoặc (, có thể thiếu hoặc không chính xác."
+      },
+      {
+        "name": "isbn_13",
+        "type": "VARCHAR",
+        "description": "Chuỗi 13 chữ số sau loại ký tự khác; chưa xác minh checksum ISBN."
+      },
+      {
+        "name": "publish_year",
+        "type": "INTEGER",
+        "description": "Năm trích từ cuối publisher_raw nếu 1400–2024; không phải năm đã xác minh."
+      },
+      {
+        "name": "language",
+        "type": "VARCHAR",
+        "description": "Ngôn ngữ theo metadata, có thể thiếu."
+      },
+      {
+        "name": "pages",
+        "type": "INTEGER",
+        "description": "Số trang theo nguồn, có thể thiếu; chưa bảo đảm mọi định dạng sản phẩm có số trang tương đương."
+      },
+      {
+        "name": "list_price",
+        "type": "DOUBLE",
+        "description": "Giá USD tại thời điểm thu thập; chỉ giữ 0 < giá ≤ 1000, ngoài ngưỡng/thiếu thành NULL."
+      },
+      {
+        "name": "average_rating",
+        "type": "FLOAT",
+        "description": "Điểm hiển thị trong metadata, không phải điểm tính lại từ tập fact đã lọc."
+      },
+      {
+        "name": "rating_number",
+        "type": "INTEGER",
+        "description": "Số đánh giá hiển thị trong metadata, không đồng nhất số dòng trong fact_sales."
+      }
+    ]
+  },
+  "dim_customers": {
+    "path": "data\\warehouse\\dim_customers.parquet",
+    "rows": 8353809,
+    "logical_key": "customer_key (PK), user_id (duy nhất)",
+    "columns": [
+      {
+        "name": "customer_key",
+        "type": "BIGINT",
+        "description": "Khóa thay thế của người đánh giá; không chứa tên, email hoặc địa chỉ."
+      },
+      {
+        "name": "user_id",
+        "type": "VARCHAR",
+        "description": "Mã người đánh giá nguồn Amazon; khóa nghiệp vụ, không phải mã khách hàng giao dịch đã xác thực."
+      },
+      {
+        "name": "first_purchase_date",
+        "type": "DATE",
+        "description": "Ngày đánh giá đã xác minh đầu tiên trong tập sạch; tên cột cũ không có nghĩa đây là ngày mua."
+      },
+      {
+        "name": "last_purchase_date",
+        "type": "DATE",
+        "description": "Ngày đánh giá đã xác minh cuối cùng trong tập sạch; không phải ngày mua thực."
+      },
+      {
+        "name": "total_purchases",
+        "type": "BIGINT",
+        "description": "Tổng số lượt đánh giá đã xác minh của người dùng sau làm sạch; không phải tổng đơn hàng."
+      }
+    ]
+  },
+  "dim_date": {
+    "path": "data\\warehouse\\dim_date.parquet",
+    "rows": 9711,
+    "logical_key": "date_key (PK)",
+    "columns": [
+      {
+        "name": "date_key",
+        "type": "INTEGER",
+        "description": "Khóa ngày YYYYMMDD, nối fact_sales.date_key."
+      },
+      {
+        "name": "date",
+        "type": "DATE",
+        "description": "Ngày lịch UTC được suy ra từ timestamp nguồn."
+      },
+      {
+        "name": "day",
+        "type": "BIGINT",
+        "description": "Ngày trong tháng 1–31."
+      },
+      {
+        "name": "week",
+        "type": "BIGINT",
+        "description": "Tuần ISO 1–53; kết hợp year không phải cặp ISO-year chuẩn."
+      },
+      {
+        "name": "month",
+        "type": "BIGINT",
+        "description": "Tháng 1–12."
+      },
+      {
+        "name": "quarter",
+        "type": "BIGINT",
+        "description": "Quý 1–4."
+      },
+      {
+        "name": "year",
+        "type": "BIGINT",
+        "description": "Năm lịch."
+      },
+      {
+        "name": "is_weekend",
+        "type": "BOOLEAN",
+        "description": "TRUE khi thứ Bảy hoặc Chủ nhật theo ISO weekday."
+      }
+    ]
+  },
+  "fact_sales": {
+    "path": "data\\warehouse\\fact_sales.parquet",
+    "rows": 20342188,
+    "logical_key": "sale_id (PK)",
+    "columns": [
+      {
+        "name": "sale_id",
+        "type": "BIGINT",
+        "description": "Khóa thay thế của lượt đánh giá đã xác minh, không phải mã đơn hàng thật."
+      },
+      {
+        "name": "date_key",
+        "type": "INTEGER",
+        "description": "FK đến dim_date.date_key, ngày viết đánh giá."
+      },
+      {
+        "name": "customer_key",
+        "type": "BIGINT",
+        "description": "FK đến dim_customers.customer_key."
+      },
+      {
+        "name": "book_key",
+        "type": "BIGINT",
+        "description": "FK đến dim_books.book_key."
+      },
+      {
+        "name": "quantity",
+        "type": "TINYINT",
+        "description": "Giả định bằng 1 mỗi lượt, không có số lượng mua thực trong nguồn."
+      },
+      {
+        "name": "price_usd",
+        "type": "DOUBLE",
+        "description": "Sao chép list_price hợp lệ của sản phẩm tại thu thập, USD; có thể NULL."
+      },
+      {
+        "name": "estimated_revenue",
+        "type": "DOUBLE",
+        "description": "quantity × price_usd, chỉ là giá trị đại diện; thiếu giá thì NULL, không dùng làm doanh thu thực."
+      },
+      {
+        "name": "rating",
+        "type": "FLOAT",
+        "description": "Điểm của đánh giá được giữ lại, 1–5."
+      },
+      {
+        "name": "helpful_vote",
+        "type": "INTEGER",
+        "description": "Số lượt hữu ích; giữ giá trị lớn nhất khi gộp bản ghi trùng, không phải số lượt mua."
+      }
+    ]
+  },
+  "fact_inventory": {
+    "path": "data\\warehouse\\fact_inventory.parquet",
+    "rows": 4347336,
+    "logical_key": "(book_key, month_key) (PK ghép)",
+    "columns": [
+      {
+        "name": "book_key",
+        "type": "BIGINT",
+        "description": "FK đến dim_books.book_key, chỉ các sản phẩm có hoạt động trong 09/2022–08/2023."
+      },
+      {
+        "name": "month_key",
+        "type": "BIGINT",
+        "description": "Tháng YYYYMM từ 202209 đến 202308; khóa ghép với book_key."
+      },
+      {
+        "name": "units_sold",
+        "type": "DOUBLE",
+        "description": "Tổng quantity từ fact_sales theo sách/tháng; đặt tên cũ, thực tế là số lượt đánh giá đại diện, không phải lượng bán đo được."
+      },
+      {
+        "name": "stock_quantity",
+        "type": "INTEGER",
+        "description": "Tồn kho mô phỏng bằng hàm băm và số lượt đại diện; số nguyên không âm, không phải tồn kho thực."
+      },
+      {
+        "name": "unit_cost",
+        "type": "DOUBLE",
+        "description": "Giá vốn mô phỏng bằng 50–80% list_price, làm tròn 2 chữ số; NULL nếu thiếu giá."
+      },
+      {
+        "name": "is_simulated",
+        "type": "BOOLEAN",
+        "description": "Luôn TRUE; đánh dấu bảng lớp kinh doanh mô phỏng."
+      }
+    ]
+  },
+  "rfm_all_users": {
+    "path": "results\\rfm_kmeans\\rfm_all_users.parquet",
+    "rows": 8353809,
+    "logical_key": "customer_key (PK/FK)",
+    "columns": [
+      {
+        "name": "customer_key",
+        "type": "BIGINT",
+        "description": "Khóa người dùng trong dim_customers."
+      },
+      {
+        "name": "recency",
+        "type": "BIGINT",
+        "description": "Số ngày từ đánh giá cuối đến 2023-09-15; không tính đến ngày hiện tại."
+      },
+      {
+        "name": "frequency",
+        "type": "BIGINT",
+        "description": "Số lượt đánh giá đã xác minh trong tập sạch, bằng total_purchases."
+      },
+      {
+        "name": "priced_reviews",
+        "type": "BIGINT",
+        "description": "Số lượt có price_usd hợp lệ; từ 0 đến frequency."
+      },
+      {
+        "name": "monetary_observed",
+        "type": "DOUBLE",
+        "description": "Tổng estimated_revenue quan sát được; tất cả thiếu giữ NULL, thiếu một phần chỉ là tổng một phần."
+      },
+      {
+        "name": "price_coverage",
+        "type": "DOUBLE",
+        "description": "priced_reviews / frequency, tỷ lệ 0–1."
+      },
+      {
+        "name": "eligible",
+        "type": "BOOLEAN",
+        "description": "TRUE khi mọi lượt đều có giá hợp lệ; chỉ nhóm này đưa vào K-Means."
+      },
+      {
+        "name": "frequency_stratum",
+        "type": "VARCHAR",
+        "description": "Tầng lấy mẫu theo F: 1, 2, 3-5, 6-10, 11-50, >50."
+      }
+    ]
+  },
+  "rfm_with_clusters": {
+    "path": "results\\rfm_kmeans\\rfm_with_clusters.parquet",
+    "rows": 8353809,
+    "logical_key": "customer_key (PK/FK)",
+    "columns": [
+      {
+        "name": "customer_key",
+        "type": "BIGINT",
+        "description": "Khóa người dùng trong dim_customers."
+      },
+      {
+        "name": "recency",
+        "type": "BIGINT",
+        "description": "Số ngày từ đánh giá cuối đến 2023-09-15; không tính đến ngày hiện tại."
+      },
+      {
+        "name": "frequency",
+        "type": "BIGINT",
+        "description": "Số lượt đánh giá đã xác minh trong tập sạch, bằng total_purchases."
+      },
+      {
+        "name": "priced_reviews",
+        "type": "BIGINT",
+        "description": "Số lượt có price_usd hợp lệ; từ 0 đến frequency."
+      },
+      {
+        "name": "monetary_observed",
+        "type": "DOUBLE",
+        "description": "Tổng estimated_revenue quan sát được; tất cả thiếu giữ NULL, thiếu một phần chỉ là tổng một phần."
+      },
+      {
+        "name": "price_coverage",
+        "type": "DOUBLE",
+        "description": "priced_reviews / frequency, tỷ lệ 0–1."
+      },
+      {
+        "name": "eligible",
+        "type": "BOOLEAN",
+        "description": "TRUE khi mọi lượt đều có giá hợp lệ; chỉ nhóm này đưa vào K-Means."
+      },
+      {
+        "name": "frequency_stratum",
+        "type": "VARCHAR",
+        "description": "Tầng lấy mẫu theo F: 1, 2, 3-5, 6-10, 11-50, >50."
+      },
+      {
+        "name": "cluster",
+        "type": "INTEGER",
+        "description": "Nhãn K-Means 0..k-1, không có thứ hạng; -1 là thiếu giá nên không phân cụm. Mô hình hiện tại k=2."
+      }
+    ]
+  }
+}

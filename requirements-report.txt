@@ -1,0 +1,4 @@
+-r requirements.txt
+python-docx==1.2.0
+PyMuPDF==1.28.2
+reportlab==5.0.1

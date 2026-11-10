@@ -1,0 +1,19 @@
+name: Project checks
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  dashboard-and-offline-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Tests using committed fixtures and aggregate evidence
+        run: python run_tests.py --unit-only
+      - name: Dashboard pages and filters
+        run: python -m unittest discover -s dashboard/tests -v

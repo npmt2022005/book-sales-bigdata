@@ -1,0 +1,54 @@
+{
+  "reviews_summary": {
+    "rows": 29475453,
+    "users": 10297355,
+    "books": 4446065,
+    "verified_pct": 69.77,
+    "first_review": "1996-06-17 00:08:04",
+    "last_review": "2023-09-14 02:12:29.017",
+    "invalid_rating": 4
+  },
+  "reviews_null_pct": {
+    "parent_asin": 0.0,
+    "asin": 0.0,
+    "user_id": 0.0,
+    "timestamp_ms": 0.0,
+    "rating": 0.0,
+    "helpful_vote": 0.0,
+    "verified_purchase": 0.0
+  },
+  "review_duplicates": {
+    "same_user_book_time": 333132,
+    "same_user_book": 336124
+  },
+  "meta_summary": {
+    "rows": 4448181,
+    "books": 4448181,
+    "categories": 229,
+    "price_not_positive": 98255,
+    "price_above_1000": 2367,
+    "price_p50": 13.96,
+    "price_p99": 199.95,
+    "price_max": 1000000.0
+  },
+  "meta_null_pct": {
+    "parent_asin": 0.0,
+    "title": 0.0,
+    "author": 35.54,
+    "main_category": 0.01,
+    "category": 11.89,
+    "category_path": 11.89,
+    "publisher_raw": 12.66,
+    "language": 11.12,
+    "isbn_13": 20.1,
+    "pages": 23.89,
+    "price_usd": 19.04,
+    "price_raw": 13.86,
+    "average_rating": 0.0,
+    "rating_number": 0.0
+  },
+  "join_coverage": {
+    "verified_with_book_pct": 100.0,
+    "verified_with_price_pct": 86.85
+  }
+}

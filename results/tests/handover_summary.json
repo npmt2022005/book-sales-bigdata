@@ -1,0 +1,12 @@
+{
+  "unit_tests_passed": 13,
+  "data_checks_passed": 37,
+  "data_checks_total": 37,
+  "dashboard_tests_passed": 6,
+  "verified_basic_runs": 720,
+  "verified_extended_runs": 400,
+  "verified_refresh_operations": 40,
+  "dictionary_datasets": 7,
+  "dictionary_columns": 58,
+  "dashboard": "implemented locally; two experiment sessions kept separate"
+}

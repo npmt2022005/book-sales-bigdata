@@ -1,0 +1,21 @@
+{
+  "archive": "C:\\Users\\ACER\\Downloads\\pg_extended_1110_132250-20261110T173019Z-1-001.zip",
+  "sha256": "616419e517d1e95ebc89842d5f7060b9c7091700577473fc113e61a7fd24df57",
+  "session": "pg_extended_1110_132250",
+  "verified_runs": 400,
+  "verified_combinations": 80,
+  "repeats": 5,
+  "verified_sizes": {
+    "1m": 1000000,
+    "5m": 5000000,
+    "10m": 10000000,
+    "full": 20342188
+  },
+  "baseline": "postgres_4mb within the same session",
+  "all_query_matches": true,
+  "refresh_views_verified": 8,
+  "refresh_operations_verified": 40,
+  "provider_csv_matches_recomputed_medians": true,
+  "old_session_runs": 720,
+  "total_across_two_separate_sessions": 1120
+}

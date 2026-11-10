@@ -1,0 +1,7 @@
+{
+  "population_rows": 8353809,
+  "invalid_eligibility_assignments": 0,
+  "eligible_null_monetary": 0,
+  "reloaded_model_predictions_match_training_labels": true,
+  "training_labels_checked": 150000
+}

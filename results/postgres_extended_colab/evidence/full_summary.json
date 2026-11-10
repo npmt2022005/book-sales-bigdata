@@ -1,0 +1,1373 @@
+{
+  "machine": {
+    "cpu": "x86_64",
+    "logical_cpus": 2,
+    "ram_gb": 13.6,
+    "available_ram_gb_at_start": 12.0,
+    "cpu_percent_at_start": 3.0,
+    "python": "3.13.18",
+    "os": "Linux-6.6.159+-x86_64-with-glibc2.39"
+  },
+  "arguments": {
+    "sizes": [
+      "full"
+    ],
+    "repeats": 5,
+    "tag": "pgx_full_1110_132250",
+    "timeout": 900.0,
+    "min_free_gb": 1.0,
+    "queries": [
+      "Q1",
+      "Q2",
+      "Q3",
+      "Q4",
+      "Q5",
+      "Q6"
+    ]
+  },
+  "configs": {
+    "postgres_4mb": 4,
+    "postgres_32mb": 32,
+    "postgres_64mb": 64,
+    "materialized_4mb": 4
+  },
+  "sizes": {
+    "full": {
+      "params": {
+        "customer_key": 838952,
+        "customer_purchases": 923,
+        "rows": {
+          "dim_books": 3470693,
+          "dim_customers": 8353809,
+          "dim_date": 9711,
+          "fact_sales": 20342188
+        },
+        "csv_mb": {
+          "dim_books": 551.0,
+          "dim_customers": 508.7,
+          "dim_date": 0.4,
+          "fact_sales": 1023.5
+        }
+      },
+      "load": {
+        "copy_seconds": {
+          "dim_books": 17.74,
+          "dim_customers": 19.378,
+          "dim_date": 0.035,
+          "fact_sales": 52.91
+        },
+        "table_mb": {
+          "dim_books": 687.7,
+          "dim_customers": 706.1,
+          "dim_date": 1.1,
+          "fact_sales": 1855.1
+        }
+      },
+      "runs": [
+        {
+          "status": "ok",
+          "client_peak_gb": 0.141533184,
+          "seconds": 9.641958819000138,
+          "rows": 317,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_4mb",
+          "query": "Q1",
+          "repeat": 1
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 3.20907264,
+          "seconds": 63.57899693000036,
+          "rows": 8353809,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_64mb",
+          "query": "Q6",
+          "repeat": 1
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.145928192,
+          "seconds": 40.55136879299971,
+          "rows": 1302,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_32mb",
+          "query": "Q2",
+          "repeat": 1
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.151302144,
+          "seconds": 5.099498940000558,
+          "rows": 9711,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_64mb",
+          "query": "Q5",
+          "repeat": 1
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.143781888,
+          "seconds": 2.4885702550000133,
+          "rows": 923,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_64mb",
+          "query": "Q3",
+          "repeat": 1
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.14594048,
+          "seconds": 42.569932017999236,
+          "rows": 1302,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_4mb",
+          "query": "Q2",
+          "repeat": 1
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.151986176,
+          "seconds": 7.274925073001214,
+          "rows": 9711,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_4mb",
+          "query": "Q5",
+          "repeat": 1
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.141492224,
+          "seconds": 8.037026924999736,
+          "rows": 317,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_32mb",
+          "query": "Q1",
+          "repeat": 1
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.151855104,
+          "seconds": 0.051141533000190975,
+          "rows": 9711,
+          "matches_reference": true,
+          "size": "full",
+          "config": "materialized_4mb",
+          "query": "Q5",
+          "repeat": 1
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.145874944,
+          "seconds": 36.228978613000436,
+          "rows": 1302,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_64mb",
+          "query": "Q2",
+          "repeat": 1
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.141553664,
+          "seconds": 8.44933891599976,
+          "rows": 317,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_64mb",
+          "query": "Q1",
+          "repeat": 1
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.141746176,
+          "seconds": 37.2781390149994,
+          "rows": 27,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_4mb",
+          "query": "Q4",
+          "repeat": 1
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.141459456,
+          "seconds": 0.027734078999856138,
+          "rows": 317,
+          "matches_reference": true,
+          "size": "full",
+          "config": "materialized_4mb",
+          "query": "Q1",
+          "repeat": 1
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.144195584,
+          "seconds": 2.374711185999331,
+          "rows": 923,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_32mb",
+          "query": "Q3",
+          "repeat": 1
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.143970304,
+          "seconds": 3.981114621001325,
+          "rows": 923,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_4mb",
+          "query": "Q3",
+          "repeat": 1
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.151937024,
+          "seconds": 5.032806348001031,
+          "rows": 9711,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_32mb",
+          "query": "Q5",
+          "repeat": 1
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 3.227840512,
+          "seconds": 68.68178422600067,
+          "rows": 8353809,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_32mb",
+          "query": "Q6",
+          "repeat": 1
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.141275136,
+          "seconds": 37.896144951999304,
+          "rows": 27,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_64mb",
+          "query": "Q4",
+          "repeat": 1
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 3.219853312,
+          "seconds": 66.1021024340007,
+          "rows": 8353809,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_4mb",
+          "query": "Q6",
+          "repeat": 1
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.141000704,
+          "seconds": 37.35301451399937,
+          "rows": 27,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_32mb",
+          "query": "Q4",
+          "repeat": 1
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.143990784,
+          "seconds": 2.6049657799994748,
+          "rows": 923,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_32mb",
+          "query": "Q3",
+          "repeat": 2
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.14135296,
+          "seconds": 0.02119710899933125,
+          "rows": 317,
+          "matches_reference": true,
+          "size": "full",
+          "config": "materialized_4mb",
+          "query": "Q1",
+          "repeat": 2
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.144191488,
+          "seconds": 2.3144925240012526,
+          "rows": 923,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_64mb",
+          "query": "Q3",
+          "repeat": 2
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.145637376,
+          "seconds": 39.797980972000005,
+          "rows": 1302,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_64mb",
+          "query": "Q2",
+          "repeat": 2
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.14170112,
+          "seconds": 35.563747762000276,
+          "rows": 27,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_32mb",
+          "query": "Q4",
+          "repeat": 2
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.151810048,
+          "seconds": 7.240471528999478,
+          "rows": 9711,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_64mb",
+          "query": "Q5",
+          "repeat": 2
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.141508608,
+          "seconds": 8.088740623999911,
+          "rows": 317,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_4mb",
+          "query": "Q1",
+          "repeat": 2
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.151781376,
+          "seconds": 0.052527216999806114,
+          "rows": 9711,
+          "matches_reference": true,
+          "size": "full",
+          "config": "materialized_4mb",
+          "query": "Q5",
+          "repeat": 2
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.14127104,
+          "seconds": 10.342625928000416,
+          "rows": 317,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_64mb",
+          "query": "Q1",
+          "repeat": 2
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.152100864,
+          "seconds": 5.119579700000031,
+          "rows": 9711,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_32mb",
+          "query": "Q5",
+          "repeat": 2
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.14592,
+          "seconds": 41.83894146900093,
+          "rows": 1302,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_4mb",
+          "query": "Q2",
+          "repeat": 2
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 3.228778496,
+          "seconds": 67.63723885400032,
+          "rows": 8353809,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_32mb",
+          "query": "Q6",
+          "repeat": 2
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 3.230498816,
+          "seconds": 65.95823008099978,
+          "rows": 8353809,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_64mb",
+          "query": "Q6",
+          "repeat": 2
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.141344768,
+          "seconds": 41.274215844001446,
+          "rows": 27,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_4mb",
+          "query": "Q4",
+          "repeat": 2
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.144166912,
+          "seconds": 2.6324411709993,
+          "rows": 923,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_4mb",
+          "query": "Q3",
+          "repeat": 2
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.152027136,
+          "seconds": 6.559070560000691,
+          "rows": 9711,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_4mb",
+          "query": "Q5",
+          "repeat": 2
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.141402112,
+          "seconds": 9.771382973000073,
+          "rows": 317,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_32mb",
+          "query": "Q1",
+          "repeat": 2
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.14143488,
+          "seconds": 37.51167624899972,
+          "rows": 27,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_64mb",
+          "query": "Q4",
+          "repeat": 2
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 3.2233472,
+          "seconds": 67.18905548200019,
+          "rows": 8353809,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_4mb",
+          "query": "Q6",
+          "repeat": 2
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.146030592,
+          "seconds": 37.797264412000004,
+          "rows": 1302,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_32mb",
+          "query": "Q2",
+          "repeat": 2
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.14614528,
+          "seconds": 39.87812851600029,
+          "rows": 1302,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_32mb",
+          "query": "Q2",
+          "repeat": 3
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.144359424,
+          "seconds": 2.2276635710004484,
+          "rows": 923,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_32mb",
+          "query": "Q3",
+          "repeat": 3
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.151846912,
+          "seconds": 7.203898869000113,
+          "rows": 9711,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_32mb",
+          "query": "Q5",
+          "repeat": 3
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 3.219304448,
+          "seconds": 65.6992223490015,
+          "rows": 8353809,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_32mb",
+          "query": "Q6",
+          "repeat": 3
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.141246464,
+          "seconds": 37.95680855200044,
+          "rows": 27,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_4mb",
+          "query": "Q4",
+          "repeat": 3
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.151830528,
+          "seconds": 0.05117320600038511,
+          "rows": 9711,
+          "matches_reference": true,
+          "size": "full",
+          "config": "materialized_4mb",
+          "query": "Q5",
+          "repeat": 3
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.141422592,
+          "seconds": 9.017923067000083,
+          "rows": 317,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_64mb",
+          "query": "Q1",
+          "repeat": 3
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.14163968,
+          "seconds": 0.027832771998873795,
+          "rows": 317,
+          "matches_reference": true,
+          "size": "full",
+          "config": "materialized_4mb",
+          "query": "Q1",
+          "repeat": 3
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.152113152,
+          "seconds": 5.2235872950004705,
+          "rows": 9711,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_4mb",
+          "query": "Q5",
+          "repeat": 3
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.146366464,
+          "seconds": 37.10491695099881,
+          "rows": 1302,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_64mb",
+          "query": "Q2",
+          "repeat": 3
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.141590528,
+          "seconds": 8.93280513299942,
+          "rows": 317,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_4mb",
+          "query": "Q1",
+          "repeat": 3
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 3.222069248,
+          "seconds": 64.37225651399967,
+          "rows": 8353809,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_64mb",
+          "query": "Q6",
+          "repeat": 3
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.141479936,
+          "seconds": 35.0848795969996,
+          "rows": 27,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_32mb",
+          "query": "Q4",
+          "repeat": 3
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.14608384,
+          "seconds": 42.324792979999984,
+          "rows": 1302,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_4mb",
+          "query": "Q2",
+          "repeat": 3
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.151851008,
+          "seconds": 4.9158766149994335,
+          "rows": 9711,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_64mb",
+          "query": "Q5",
+          "repeat": 3
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.144064512,
+          "seconds": 2.2726955300004192,
+          "rows": 923,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_64mb",
+          "query": "Q3",
+          "repeat": 3
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.141344768,
+          "seconds": 9.892486027001723,
+          "rows": 317,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_32mb",
+          "query": "Q1",
+          "repeat": 3
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.1436672,
+          "seconds": 2.252118062999216,
+          "rows": 923,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_4mb",
+          "query": "Q3",
+          "repeat": 3
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 3.223441408,
+          "seconds": 67.23119543499888,
+          "rows": 8353809,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_4mb",
+          "query": "Q6",
+          "repeat": 3
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.141156352,
+          "seconds": 36.10537829199893,
+          "rows": 27,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_64mb",
+          "query": "Q4",
+          "repeat": 3
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 3.213111296,
+          "seconds": 67.57222033499966,
+          "rows": 8353809,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_64mb",
+          "query": "Q6",
+          "repeat": 4
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.14393344,
+          "seconds": 2.3276469800002815,
+          "rows": 923,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_64mb",
+          "query": "Q3",
+          "repeat": 4
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.15222784,
+          "seconds": 7.579695070999151,
+          "rows": 9711,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_4mb",
+          "query": "Q5",
+          "repeat": 4
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.141611008,
+          "seconds": 0.020901832000163267,
+          "rows": 317,
+          "matches_reference": true,
+          "size": "full",
+          "config": "materialized_4mb",
+          "query": "Q1",
+          "repeat": 4
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 3.2191488,
+          "seconds": 64.50763212499987,
+          "rows": 8353809,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_32mb",
+          "query": "Q6",
+          "repeat": 4
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 3.229597696,
+          "seconds": 65.82330612000078,
+          "rows": 8353809,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_4mb",
+          "query": "Q6",
+          "repeat": 4
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.143745024,
+          "seconds": 2.158601944998736,
+          "rows": 923,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_32mb",
+          "query": "Q3",
+          "repeat": 4
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.142815232,
+          "seconds": 2.104501181998785,
+          "rows": 923,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_4mb",
+          "query": "Q3",
+          "repeat": 4
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.151793664,
+          "seconds": 0.04800112699922465,
+          "rows": 9711,
+          "matches_reference": true,
+          "size": "full",
+          "config": "materialized_4mb",
+          "query": "Q5",
+          "repeat": 4
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.146149376,
+          "seconds": 36.333254479999596,
+          "rows": 1302,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_64mb",
+          "query": "Q2",
+          "repeat": 4
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.141225984,
+          "seconds": 34.73781947700081,
+          "rows": 27,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_64mb",
+          "query": "Q4",
+          "repeat": 4
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.139702272,
+          "seconds": 9.838569446999827,
+          "rows": 317,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_64mb",
+          "query": "Q1",
+          "repeat": 4
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.14108672,
+          "seconds": 31.916196137000952,
+          "rows": 27,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_4mb",
+          "query": "Q4",
+          "repeat": 4
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.146190336,
+          "seconds": 39.764786457999435,
+          "rows": 1302,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_32mb",
+          "query": "Q2",
+          "repeat": 4
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.151998464,
+          "seconds": 5.140678515001127,
+          "rows": 9711,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_64mb",
+          "query": "Q5",
+          "repeat": 4
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.152059904,
+          "seconds": 5.7218462559994805,
+          "rows": 9711,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_32mb",
+          "query": "Q5",
+          "repeat": 4
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.141623296,
+          "seconds": 9.022687926999424,
+          "rows": 317,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_4mb",
+          "query": "Q1",
+          "repeat": 4
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.141316096,
+          "seconds": 37.74994049199995,
+          "rows": 27,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_32mb",
+          "query": "Q4",
+          "repeat": 4
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.14616576,
+          "seconds": 40.02099306499986,
+          "rows": 1302,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_4mb",
+          "query": "Q2",
+          "repeat": 4
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.141529088,
+          "seconds": 9.806087164999553,
+          "rows": 317,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_32mb",
+          "query": "Q1",
+          "repeat": 4
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.144044032,
+          "seconds": 2.1536293380013376,
+          "rows": 923,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_64mb",
+          "query": "Q3",
+          "repeat": 5
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.141881344,
+          "seconds": 10.188377630000105,
+          "rows": 317,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_32mb",
+          "query": "Q1",
+          "repeat": 5
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.151805952,
+          "seconds": 4.781349292999948,
+          "rows": 9711,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_4mb",
+          "query": "Q5",
+          "repeat": 5
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.146079744,
+          "seconds": 41.67144070199902,
+          "rows": 1302,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_4mb",
+          "query": "Q2",
+          "repeat": 5
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.1458176,
+          "seconds": 36.411384083001394,
+          "rows": 1302,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_32mb",
+          "query": "Q2",
+          "repeat": 5
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 3.228270592,
+          "seconds": 65.59184155600087,
+          "rows": 8353809,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_32mb",
+          "query": "Q6",
+          "repeat": 5
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.141336576,
+          "seconds": 34.751064349000444,
+          "rows": 27,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_4mb",
+          "query": "Q4",
+          "repeat": 5
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.141234176,
+          "seconds": 10.049685146999764,
+          "rows": 317,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_64mb",
+          "query": "Q1",
+          "repeat": 5
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 3.21435648,
+          "seconds": 64.37404296400018,
+          "rows": 8353809,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_64mb",
+          "query": "Q6",
+          "repeat": 5
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.141357056,
+          "seconds": 0.026967840998622705,
+          "rows": 317,
+          "matches_reference": true,
+          "size": "full",
+          "config": "materialized_4mb",
+          "query": "Q1",
+          "repeat": 5
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 3.212136448,
+          "seconds": 63.652109188000395,
+          "rows": 8353809,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_4mb",
+          "query": "Q6",
+          "repeat": 5
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.152064,
+          "seconds": 5.268811928001014,
+          "rows": 9711,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_64mb",
+          "query": "Q5",
+          "repeat": 5
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.151973888,
+          "seconds": 0.08428258400090272,
+          "rows": 9711,
+          "matches_reference": true,
+          "size": "full",
+          "config": "materialized_4mb",
+          "query": "Q5",
+          "repeat": 5
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.141631488,
+          "seconds": 35.57670972199958,
+          "rows": 27,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_64mb",
+          "query": "Q4",
+          "repeat": 5
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.146026496,
+          "seconds": 2.1893929170000774,
+          "rows": 923,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_4mb",
+          "query": "Q3",
+          "repeat": 5
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.14600192,
+          "seconds": 37.68178690499917,
+          "rows": 1302,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_64mb",
+          "query": "Q2",
+          "repeat": 5
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.151965696,
+          "seconds": 4.984145978000015,
+          "rows": 9711,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_32mb",
+          "query": "Q5",
+          "repeat": 5
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.141389824,
+          "seconds": 37.952790449999156,
+          "rows": 27,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_32mb",
+          "query": "Q4",
+          "repeat": 5
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.141553664,
+          "seconds": 8.562652291000632,
+          "rows": 317,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_4mb",
+          "query": "Q1",
+          "repeat": 5
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.143880192,
+          "seconds": 3.941591236000022,
+          "rows": 923,
+          "matches_reference": true,
+          "size": "full",
+          "config": "postgres_32mb",
+          "query": "Q3",
+          "repeat": 5
+        }
+      ],
+      "warmups": [
+        {
+          "status": "ok",
+          "client_peak_gb": 0.141754368,
+          "seconds": 10.48856139199961,
+          "rows": 317,
+          "config": "postgres_4mb",
+          "query": "Q1"
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.145805312,
+          "seconds": 39.88889475900032,
+          "rows": 1302,
+          "config": "postgres_4mb",
+          "query": "Q2"
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.143982592,
+          "seconds": 2.2244296230001055,
+          "rows": 923,
+          "config": "postgres_4mb",
+          "query": "Q3"
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.141348864,
+          "seconds": 34.57647324000027,
+          "rows": 27,
+          "config": "postgres_4mb",
+          "query": "Q4"
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.151953408,
+          "seconds": 5.6758127129996865,
+          "rows": 9711,
+          "config": "postgres_4mb",
+          "query": "Q5"
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 3.223068672,
+          "seconds": 68.54857805899883,
+          "rows": 8353809,
+          "config": "postgres_4mb",
+          "query": "Q6"
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.141574144,
+          "seconds": 10.564146106000408,
+          "rows": 317,
+          "config": "postgres_32mb",
+          "query": "Q1"
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.145887232,
+          "seconds": 41.223649305000436,
+          "rows": 1302,
+          "config": "postgres_32mb",
+          "query": "Q2"
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.144068608,
+          "seconds": 2.5661167790003674,
+          "rows": 923,
+          "config": "postgres_32mb",
+          "query": "Q3"
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.141008896,
+          "seconds": 34.09697641699859,
+          "rows": 27,
+          "config": "postgres_32mb",
+          "query": "Q4"
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.152031232,
+          "seconds": 5.0686393059986585,
+          "rows": 9711,
+          "config": "postgres_32mb",
+          "query": "Q5"
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 3.224612864,
+          "seconds": 65.79400445500141,
+          "rows": 8353809,
+          "config": "postgres_32mb",
+          "query": "Q6"
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.141336576,
+          "seconds": 7.87254454899994,
+          "rows": 317,
+          "config": "postgres_64mb",
+          "query": "Q1"
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.146038784,
+          "seconds": 37.178326355000536,
+          "rows": 1302,
+          "config": "postgres_64mb",
+          "query": "Q2"
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.144203776,
+          "seconds": 2.2395002149987704,
+          "rows": 923,
+          "config": "postgres_64mb",
+          "query": "Q3"
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.141336576,
+          "seconds": 35.934091114000694,
+          "rows": 27,
+          "config": "postgres_64mb",
+          "query": "Q4"
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.15210496,
+          "seconds": 5.183605828999134,
+          "rows": 9711,
+          "config": "postgres_64mb",
+          "query": "Q5"
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 3.228766208,
+          "seconds": 63.39810857399971,
+          "rows": 8353809,
+          "config": "postgres_64mb",
+          "query": "Q6"
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.141422592,
+          "seconds": 0.019950261999838403,
+          "rows": 317,
+          "config": "materialized_4mb",
+          "query": "Q1"
+        },
+        {
+          "status": "ok",
+          "client_peak_gb": 0.152285184,
+          "seconds": 0.05217624899887596,
+          "rows": 9711,
+          "config": "materialized_4mb",
+          "query": "Q5"
+        }
+      ],
+      "materialized_views": {
+        "mv_monthly": {
+          "create_seconds": 9.844230781000078,
+          "bytes": 16384,
+          "analyze_seconds": 0.0030458040000667097,
+          "rows": 317,
+          "refresh_seconds": [
+            7.935047414001019,
+            10.33110356799989,
+            8.189812239001185,
+            10.044917446000909,
+            9.70939406999969
+          ],
+          "refresh_median_s": 9.70939406999969,
+          "refresh_matches_reference": true
+        },
+        "mv_daily": {
+          "create_seconds": 6.080010482000944,
+          "bytes": 524288,
+          "analyze_seconds": 0.0061193639994598925,
+          "rows": 9487,
+          "refresh_seconds": [
+            5.594921679001345,
+            4.816794071999539,
+            7.27104551299999,
+            4.825933057998554,
+            4.848443233999205
+          ],
+          "refresh_median_s": 4.848443233999205,
+          "refresh_matches_reference": true
+        }
+      },
+      "settings": {
+        "server_version": "16.15 (Ubuntu 16.15-0ubuntu0.24.04.1)",
+        "work_mem": "4MB",
+        "hash_mem_multiplier": "2",
+        "shared_buffers": "128MB",
+        "max_parallel_workers_per_gather": "2",
+        "block_size": "8192"
+      }
+    }
+  },
+  "timing": "Connection + per-session configuration + query + full client materialization; imports, result persistence and comparison excluded. Client RSS excludes PostgreSQL server. Warm OS cache uncontrolled."
+}

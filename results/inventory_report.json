@@ -1,0 +1,13 @@
+{
+  "rows": 4347336,
+  "books": 362278,
+  "months": 12,
+  "units_sold": 802944.0,
+  "with_cost_pct": 84.33,
+  "checks_must_be_zero": {
+    "duplicate_book_month": 0,
+    "negative_stock": 0,
+    "not_marked_simulated": 0,
+    "units_sold_mismatch": 0
+  }
+}
